@@ -187,7 +187,8 @@ $(function () {
             }
         });
 
-        $('form').submit(function(event) {
+        // Only prevent submission for the search form, not all forms
+        $('#full-page-search form').submit(function(event) {
             event.preventDefault();
             return false;
         })

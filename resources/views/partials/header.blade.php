@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-7">
                 <div class="list-inline">
-                    <a href="tel:1-7X0-555-8X22"><i class="fa fa-phone"></i>+0477 85X6 552</a>
-                    <a href="tel:info@themevessel.com"><i class="fa fa-envelope"></i>info@themevessel.com</a>
+                    <a href="tel:+256778162705"><i class="fa fa-phone"></i>+256 778162705</a>
+                    <a href="mailto:info@ojjorealestate.com"><i class="fa fa-envelope"></i>info@ojjorealestate.com</a>
                     <a href="#" class="mr-0 d-none-992"><i class="fa fa-clock-o"></i>Mon - Sun: 8:00am - 6:00pm</a>
                 </div>
             </div>
@@ -456,19 +456,19 @@
             <div class="media">
                 <i class="fa fa-phone"></i>
                 <div class="media-body">
-                    <a href="tel:0477-0477-8556-552">0477 8556 552</a>
+                    <a href="tel:+256778162705">+256 778162705</a>
                 </div>
             </div>
             <div class="media">
                 <i class="fa fa-envelope"></i>
                 <div class="media-body">
-                    <a href="#">info@themevessel.com</a>
+                    <a href="mailto:info@ojjorealestate.com">info@ojjorealestate.com</a>
                 </div>
             </div>
             <div class="media mb-0">
                 <i class="fa fa-fax"></i>
                 <div class="media-body">
-                    <a href="#">info@themevessel.com</a>
+                    <a href="mailto:info@ojjorealestate.com">info@ojjorealestate.com</a>
                 </div>
             </div>
         </div>

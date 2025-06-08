@@ -70,11 +70,11 @@ main {
 
 .slick-dots li button:before {
     font-size: 12px !important;
-    color: #007bff !important;
+    color: #00ff04 !important;
 }
 
 .slick-dots li.slick-active button:before {
-    color: #0056b3 !important;
+    color: #21b300 !important;
 }
 
 /* Video Overlay */
@@ -130,7 +130,7 @@ main {
 }
 
 .sidebar-logo img {
-    max-width: 150px;
+    max-width: 250px;
     height: auto;
 }
 
@@ -163,7 +163,7 @@ main {
 
 .sidebar-navigation .menu-list li a:hover,
 .sidebar-navigation .menu-list li a.active {
-    background: #007bff;
+    background: #ff9100;
     color: #fff;
 }
 
@@ -185,7 +185,7 @@ main {
     right: 15px;
     width: 30px;
     height: 30px;
-    background: #007bff;
+    background: #00ff66;
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -197,7 +197,7 @@ main {
 }
 
 #dismiss:hover {
-    background: #0056b3;
+    background: #00cf48;
 }
 
 /* Get in touch section */
@@ -231,7 +231,7 @@ main {
 }
 
 .get-in-touch .media a:hover {
-    color: #007bff;
+    color: #44d402;
 }
 
 /* Get social section */

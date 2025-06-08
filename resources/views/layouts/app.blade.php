@@ -45,6 +45,76 @@
     <!-- Header -->
     @include('partials.header')
 
+    <!-- Flash Messages -->
+    @if(session('success') || session('error') || session('warning') || session('info'))
+        <div class="flash-messages">
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="fa fa-check-circle"></i> {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            
+            @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="fa fa-exclamation-circle"></i> {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            
+            @if(session('warning'))
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <i class="fa fa-exclamation-triangle"></i> {{ session('warning') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            
+            @if(session('info'))
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <i class="fa fa-info-circle"></i> {{ session('info') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+        </div>
+        
+        <style>
+            .flash-messages {
+                position: fixed;
+                top: 80px;
+                right: 20px;
+                z-index: 1050;
+                max-width: 400px;
+            }
+            
+            .flash-messages .alert {
+                margin-bottom: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border: none;
+                border-radius: 8px;
+            }
+            
+            .flash-messages .alert i {
+                margin-right: 8px;
+            }
+            
+            @media (max-width: 768px) {
+                .flash-messages {
+                    top: 70px;
+                    right: 10px;
+                    left: 10px;
+                    max-width: none;
+                }
+            }
+        </style>
+        
+        <script>
+            // Auto-hide flash messages after 5 seconds
+            setTimeout(function() {
+                $('.flash-messages .alert').fadeOut('slow');
+            }, 5000);
+        </script>
+    @endif
+
     <!-- Main Content -->
     <main>
         @yield('content')

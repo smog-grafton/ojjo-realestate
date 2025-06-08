@@ -16,8 +16,9 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="Subscribe-box">
                         <div class="newsletter-content-wrap">
-                            <form class="newsletter-form d-flex" action="#">
-                                <input class="form-control" type="email" id="email" placeholder="Email Address...">
+                            <form class="newsletter-form d-flex" action="{{ route('newsletter.subscribe') }}" method="POST">
+                                @csrf
+                                <input class="form-control" type="email" name="email" id="email" placeholder="Email Address..." required>
                                 <button class="btn btn-submit" type="submit"><i class="fa fa-paper-plane"></i></button>
                             </form>
                         </div>
