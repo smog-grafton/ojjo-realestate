@@ -66,7 +66,7 @@
                                 <a href="#"><i class="fa fa-angle-right"></i>Home</a>
                             </li>
                             <li>
-                                <a href="about.html"><i class="fa fa-angle-right"></i>About Us</a>
+                                <a href="{{ route('about-us') }}"><i class="fa fa-angle-right"></i>About Us</a>
                             </li>
                             <li>
                                 <a href="services.html"><i class="fa fa-angle-right"></i>Services</a>
@@ -75,10 +75,10 @@
                                 <a href="blog-classic-sidebar-right.html"><i class="fa fa-angle-right"></i>Blog</a>
                             </li>
                             <li>
-                                <a href="dashboard.html"><i class="fa fa-angle-right"></i>Dashboard</a>
+                                <a href="{{ route('dashboard.index') }}"><i class="fa fa-angle-right"></i>Dashboard</a>
                             </li>
                             <li>
-                                <a href="contact.html"><i class="fa fa-angle-right"></i>Contact Us</a>
+                                <a href="{{ route('contact.show') }}"><i class="fa fa-angle-right"></i>Contact Us</a>
                             </li>
                             <li>
                                 <a href="elements.html"><i class="fa fa-angle-right"></i>Elements</a>
@@ -271,7 +271,7 @@
                     <li class="menu-item"><a href="properties-grid-leftside.html">Properties List</a></li>
                     <li class="menu-item"><a href="properties-details.html">Property Detail</a></li>
                     <li class="menu-item"><a href="blog-single-sidebar-right.html">Blog</a></li>
-                    <li class="menu-item"><a href="about.html">About  US</a></li>
+                    <li class="menu-item"><a href="{{ route('about-us') }}">About Us</a></li>
                     <li class="menu-item"><a href="contact-3.html">Contact US</a></li>
                 </ul>
             </aside>

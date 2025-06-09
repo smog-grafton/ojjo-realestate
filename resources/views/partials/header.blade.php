@@ -11,12 +11,42 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-5">
                 <ul class="top-social-media pull-right">
-                    <li>
-                        <a href="login.html" class="sign-in"><i class="fa fa-sign-in"></i> Login </a>
-                    </li>
-                    <li>
-                        <a href="login.html" class="sign-in"><i class="fa fa-user"></i> Register</a>
-                    </li>
+                    @guest
+                        <li>
+                            <a href="{{ route('login') }}" class="sign-in"><i class="fa fa-sign-in"></i> Login </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('register') }}" class="sign-in"><i class="fa fa-user"></i> Register</a>
+                        </li>
+                    @endguest
+                    
+                    @auth
+                        <li class="dropdown user-dropdown">
+                            <a href="#" class="dropdown-toggle user-avatar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user-circle"></i> {{ Auth::user()->name }} <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                @if(Auth::user()->hasRole('admin'))
+                                    <li><a class="dropdown-item" href="{{ route('filament.admin.pages.dashboard') }}"><i class="fa fa-dashboard"></i> Admin Dashboard</a></li>
+                                @endif
+                                <li><a class="dropdown-item" href="{{ route('dashboard.index') }}"><i class="fa fa-user"></i> Dashboard</a></li>
+                                <li><a class="dropdown-item" href="{{ route('dashboard.profile') }}"><i class="fa fa-user-o"></i> Profile</a></li>
+                                @can('submit property')
+                                    <li><a class="dropdown-item" href="{{ route('dashboard.properties.submit') }}"><i class="fa fa-plus"></i> Submit Property</a></li>
+                                @endcan
+                                <li><a class="dropdown-item" href="{{ route('dashboard.properties.favorite') }}"><i class="fa fa-heart"></i> Favorite Properties</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+                                        @csrf
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                                            <i class="fa fa-sign-out"></i> Logout
+                                        </a>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @endauth
                 </ul>
             </div>
         </div>
@@ -30,7 +60,7 @@
         <div class="row">
             <div class="col-12">
                 <nav class="navbar navbar-expand-lg navbar-light rounded">
-                    <a class="navbar-brand logo" href="index.html">
+                    <a class="navbar-brand logo" href="{{ route('home') }}">
                         <img src="{{ asset('assets/img/logos/black-logo.png') }}" alt="logo">
                     </a>
                     <button class="navbar-toggler" type="button" id="drawer">
@@ -112,12 +142,6 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">About</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                                            <li><a class="dropdown-item" href="about-me.html">About Me</a></li>
-                                        </ul>
-                                    </li>
                                     <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Services</a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="services.html">Services 1</a></li>
@@ -161,7 +185,9 @@
                                     <li><a class="dropdown-item" href="search-brand.html">Search Brand</a></li>
                                     <li><a class="dropdown-item" href="elements.html">Elements</a></li>
                                     <li><a class="dropdown-item" href="coming-soon.html">Coming Soon</a></li>
-                                    <li><a class="dropdown-item" href="login.html">Login/Register</a></li>
+                                    @guest
+                                        <li><a href="{{ route('login') }}"><i class="fa fa-sign-in"></i> Login/Register</a></li>
+                                    @endguest
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -186,10 +212,10 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Blog
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
                                     <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Columns</a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="blog-columns-2col.html">2 Columns</a></li>
@@ -223,18 +249,14 @@
                                     <a class="dropdown-item" href="shop-single.html">Shop Details</a>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Contact
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                                    <a class="dropdown-item" href="contact-1.html">Contact 1</a>
-                                    <a class="dropdown-item" href="contact-2.html">Contact 2</a>
-                                    <a class="dropdown-item" href="contact-3.html">Contact 3</a>
-                                </div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('about-us') }}">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('contact.show') }}">Contact Us</a>
                             </li>
                             <li class="nav-item sb2">
-                                <a  href="submit-property.html" class="submit-btn">
+                                <a href="{{ route('dashboard.properties.submit') }}" class="submit-btn">
                                     Submit Property
                                 </a>
                             </li>
@@ -260,9 +282,19 @@
         <div class="sidebar-navigation">
             <h3 class="heading">Pages</h3>
             <ul class="menu-list">
+                @auth
+                    <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <li><a href="{{ route('dashboard.properties.my') }}"><i class="fa fa-building"></i> My Properties</a></li>
+                    <li><a href="{{ route('dashboard.profile') }}"><i class="fa fa-user"></i> Profile</a></li>
+                    <li><a href="{{ route('dashboard.properties.submit') }}"><i class="fa fa-plus"></i> Submit Property</a></li>
+                    @hasrole('admin')
+                        <li><a href="{{ route('filament.admin.pages.dashboard') }}" target="_blank"><i class="fa fa-cog"></i> Admin Panel</a></li>
+                    @endhasrole
+                @endauth
+                
                 <li><a href="#" class="active pt0">Index <em class="fa fa-chevron-down"></em></a>
                     <ul>
-                        <li><a href="index.html">Index 1</a></li>
+                        <li><a href="{{ route('home') }}">Index 1</a></li>
                         <li><a href="index-2.html">Index 2</a></li>
                         <li><a href="index-3.html">Index 3</a></li>
                         <li><a href="index-4.html">Index 4</a></li>
@@ -325,13 +357,6 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">About <em class="fa fa-chevron-down"></em></a>
-                            <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="about-me.html">About Me</a></li>
-                            </ul>
-                        </li>
-                        <li>
                             <a href="#">Services <em class="fa fa-chevron-down"></em></a>
                             <ul>
                                 <li><a href="services.html">Services 1</a></li>
@@ -378,7 +403,9 @@
                         <li><a href="search-brand.html">Search Brand</a></li>
                         <li><a href="elements.html">Elements</a></li>
                         <li><a href="coming-soon.html">Coming Soon</a></li>
-                        <li><a href="login.html">Login/Register</a></li>
+                        @guest
+                            <li><a href="{{ route('login') }}"><i class="fa fa-sign-in"></i> Login/Register</a></li>
+                        @endguest
                     </ul>
                 </li>
                 <li>
@@ -432,23 +459,34 @@
                 </li>
                 <li><a href="#">Shop <em class="fa fa-chevron-down"></em></a>
                     <ul>
-
                         <li><a class="dropdown-item" href="shop-list.html">Shop List</a></li>
                         <li><a class="dropdown-item" href="shop-cart.html">Shop Cart</a></li>
                         <li> <a class="dropdown-item" href="shop-checkout.html">Shop Checkout</a></li>
                         <li><a class="dropdown-item" href="shop-single.html">Shop Details</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Contact <em class="fa fa-chevron-down"></em></a>
-                    <ul>
-                        <li><a class="dropdown-item" href="contact-1.html">Contact 1</a></li>
-                        <li><a class="dropdown-item" href="contact-2.html">Contact 2</a></li>
-                        <li><a class="dropdown-item" href="contact-3.html">Contact 3</a></li>
-                    </ul>
-                </li>
+                <li><a href="{{ route('about-us') }}">About Us</a></li>
+                <li><a href="{{ route('contact.show') }}">Contact Us</a></li>
+                
                 <li>
-                    <a href="submit-property.html">Submit Property</a>
+                    <a href="#">Submit Property</a>
                 </li>
+                
+                @guest
+                    <li><a href="{{ route('login') }}"><i class="fa fa-sign-in"></i> Login</a></li>
+                    <li><a href="{{ route('register') }}"><i class="fa fa-user-plus"></i> Register</a></li>
+                @endguest
+                
+                @auth
+                    <li>
+                        <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+                            @csrf
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                                <i class="fa fa-sign-out"></i> Logout
+                            </a>
+                        </form>
+                    </li>
+                @endauth
             </ul>
         </div>
         <div class="get-in-touch">
