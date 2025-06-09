@@ -211,32 +211,8 @@
                                     <li><a class="dropdown-item" href="agent-detail.html">Agent Detail</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Blog
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
-                                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Columns</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="blog-columns-2col.html">2 Columns</a></li>
-                                            <li><a class="dropdown-item" href="blog-columns-3col.html">3 Columns</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Classic</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="blog-classic-sidebar-right.html">Right Sidebar</a></li>
-                                            <li><a class="dropdown-item" href="blog-classic-sidebar-left.html">Left Sidebar</a></li>
-                                            <li><a class="dropdown-item" href="blog-classic-fullwidth.html">FullWidth</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Blog Details</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="blog-single-sidebar-right.html">Right Sidebar</a></li>
-                                            <li><a class="dropdown-item" href="blog-single-sidebar-left.html">Left Sidebar</a></li>
-                                            <li><a class="dropdown-item" href="blog-single-fullwidth.html">Fullwidth</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('blog.index') }}">Blog</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -429,34 +405,7 @@
                         <li><a href="agent-detail.html">Agent Detail</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">Blog <em class="fa fa-chevron-down"></em></a>
-                    <ul>
-                        <li>
-                            <a href="#">Columns<em class="fa fa-chevron-down"></em></a>
-                            <ul>
-                                <li><a href="blog-columns-2col.html">2 Columns</a></li>
-                                <li><a href="blog-columns-3col.html">3 Columns</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Classic <em class="fa fa-chevron-down"></em></a>
-                            <ul>
-                                <li><a href="blog-classic-sidebar-right.html">Right Sidebar</a></li>
-                                <li><a href="blog-classic-sidebar-left.html">Left Sidebar</a></li>
-                                <li><a href="blog-classic-fullwidth.html">FullWidth</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Blog Details <em class="fa fa-chevron-down"></em></a>
-                            <ul>
-                                <li><a href="blog-single-sidebar-right.html">Right Sidebar</a></li>
-                                <li><a href="blog-single-sidebar-left.html">Left Sidebar</a></li>
-                                <li><a href="blog-single-fullwidth.html">Fullwidth</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                <li><a href="{{ route('blog.index') }}">Blog</a></li>
                 <li><a href="#">Shop <em class="fa fa-chevron-down"></em></a>
                     <ul>
                         <li><a class="dropdown-item" href="shop-list.html">Shop List</a></li>

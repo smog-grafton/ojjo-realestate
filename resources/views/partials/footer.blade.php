@@ -72,7 +72,7 @@
                                 <a href="services.html"><i class="fa fa-angle-right"></i>Services</a>
                             </li>
                             <li>
-                                <a href="blog-classic-sidebar-right.html"><i class="fa fa-angle-right"></i>Blog</a>
+                                <a href="{{ route('blog.index') }}"><i class="fa fa-angle-right"></i>Blog</a>
                             </li>
                             <li>
                                 <a href="{{ route('dashboard.index') }}"><i class="fa fa-angle-right"></i>Dashboard</a>
