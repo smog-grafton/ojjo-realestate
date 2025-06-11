@@ -131,10 +131,6 @@ php artisan serve
 3. Save favorites, schedule tours, and make bookings
 4. Manage your profile and view your history
 
-## Screenshots
-
-[Add screenshots of your application here]
-
 ## Roadmap
 
 - **Q3 2023**: Mobile application development
@@ -164,5 +160,5 @@ This project is licensed under the [MIT License](LICENSE).
 </p>
 
 <p align="center">
-  © 2023 Ojjo Property Masters Limited. All rights reserved.
+  © 2025 Ojjo Property Masters Limited. All rights reserved.
 </p>
