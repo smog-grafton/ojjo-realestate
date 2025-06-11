@@ -133,11 +133,11 @@ php artisan serve
 
 ## Roadmap
 
-- **Q3 2023**: Mobile application development
-- **Q4 2023**: Integration with payment gateways for all East African countries
-- **Q1 2024**: AI-powered property recommendations
-- **Q2 2024**: Augmented reality virtual tours
-- **Q3 2024**: Expansion to additional African regions
+- **Q3 2024**: Mobile application development
+- **Q4 2025**: Integration with payment gateways for all East African countries
+- **Q1 2025**: AI-powered property recommendations
+- **Q2 2025**: Augmented reality virtual tours
+- **Q3 2025**: Expansion to additional African regions
 
 ## Contributing
 
