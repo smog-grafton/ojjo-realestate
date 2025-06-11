@@ -30,11 +30,20 @@ class DatabaseSeeder extends Seeder
 
         // Call other seeders
         $this->call([
+            RoleSeeder::class,
             SettingsSeeder::class,
             EmailTemplateSeeder::class,
+            AgencySeeder::class,
+            AgentSeeder::class,
             CategorySeeder::class,
             TagSeeder::class,
             PostSeeder::class,
+            PlaceSeeder::class,
+            PropertySeeder::class,
+            PropertyRequestSeeder::class,
+            PropertyReviewSeeder::class,
+            FaqCategorySeeder::class,
+            FaqSeeder::class,
         ]);
     }
 }
