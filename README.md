@@ -71,7 +71,7 @@ Our mission is to connect clients with exceptional real estate opportunities and
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/ojjoestates.git
+git clone https://github.com/smog-grafton/ojjo-realestate.git
 cd ojjoestates
 ```
 
@@ -121,8 +121,8 @@ php artisan serve
 ### For Administrators
 1. Navigate to `/admin/login`
 2. Use the default credentials:
-   - Email: admin@example.com
-   - Password: password
+   - Email: protected.com
+   - Password: ************
 3. Explore the admin dashboard to manage properties, bookings, users, and settings
 
 ### For Users
@@ -137,7 +137,6 @@ php artisan serve
 - **Q4 2025**: Integration with payment gateways for all East African countries
 - **Q1 2025**: AI-powered property recommendations
 - **Q2 2025**: Augmented reality virtual tours
-- **Q3 2025**: Expansion to additional African regions
 
 ## Contributing
 
